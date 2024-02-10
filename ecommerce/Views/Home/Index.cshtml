@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<ecommerce.Models.Book>;
+<form class="row row-cols-lg-auto g-3 align-items-center mt-2 mx-2">
+  <div class="col-12">
+   @* <label class="visually-hidden" for="inlineFormInputGroupUsername">Book Title</label>
+    <div class="input-group">
+      <div class="input-group-text">Title</div>*@
+      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Title">
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Categories</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Category</option>
+      <option value="1">Horror</option>
+      <option value="2">Science</option>
+      <option value="3">Thrill</option>
+    </select>
+  </div>
+  
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-secondary">Search</button>
+  </div>
+</form>
+<div class="d-flex flex-wrap container-fluid ">
+   
+    
+       @foreach (var item in Model)
+    {
+   
+<div class="card mt-2 mx-2 " style="width: 18rem;">
+    <img src="" class="card-img-top" alt="">
+    <div class="card-body">
+            <h5 class="card-title">@item.BookName</h5>
+            <h5 class="card-title">@item.Author</h5>
+            <h5 class="card-title">@item.Price$</h5>
+           @* <p class="card-text">a story in which the focus is on creating a feeling of fear. Such tales are of ancient origin and form a substantial part of the body of folk literature</p>*@
+        <a href="#" class="btn btn-secondary">BOOK NOW</a>
+    </div>
+</div>}
+</div>
